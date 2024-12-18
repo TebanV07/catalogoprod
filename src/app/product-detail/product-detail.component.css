@@ -1,0 +1,121 @@
+h1{
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #444;
+  font-weight: bold;
+}
+/* Detalle del producto */
+.product-detail {
+  border: 2px solid #ff8a00;
+  border-radius: 15px; /* Borde más suave */
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: 30px auto;
+  background: linear-gradient(135deg, #fffbf0, #ffe5d0); /* Fondo degradado */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-detail:hover {
+  transform: scale(1.02); /* Efecto de zoom al pasar el ratón */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenido del producto */
+.product-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Imagen del producto */
+.product-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 15px;
+  border: 3px solid #ff8a00;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: rotate(3deg) scale(1.05); /* Rotación leve al pasar el ratón */
+}
+
+/* Información del producto */
+.product-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #444;
+  font-weight: bold;
+}
+
+.product-info strong {
+  color: #ff8a00; /* Color llamativo para las etiquetas */
+}
+
+/* Botones del producto */
+.product-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #28a745; /* Verde brillante */
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+  transform: translateY(-3px); /* Rebote hacia arriba */
+}
+
+.btn-secondary {
+  background-color: #dc3545; /* Rojo brillante */
+}
+
+.btn-secondary:hover {
+  background-color: #c82333;
+  transform: translateY(-3px);
+}
+
+/* Botón de volver */
+.btn-light {
+  margin-top: 20px;
+  background-color: #ff8a00; /* Naranja vibrante */
+  color: #fff;
+}
+
+.btn-light:hover {
+  background-color: #e57e00;
+  transform: scale(1.05) rotate(-1deg); /* Efecto de rebote */
+}
+
+/* Animación global para botones */
+@keyframes bounceButton {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.btn:hover {
+  animation: bounceButton 0.6s;
+}

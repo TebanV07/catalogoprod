@@ -1,0 +1,45 @@
+/* Estilos generales */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    text-align: center; /* Alinea el texto al centro */
+    background-color: #f8d7da; /* Fondo rojo suave */
+    color: #721c24; /* Color del texto rojo oscuro */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  /* Título */
+  h1 {
+    font-size: 3rem; /* Texto grande */
+    margin-bottom: 10px; /* Espacio inferior */
+  }
+  
+  /* Párrafo */
+  p {
+    font-size: 1.5rem; /* Texto más grande */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+  
+  /* Botón */
+  a {
+    display: inline-block;
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #f5c6cb; /* Color de fondo del botón */
+    color: #721c24; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado */
+    border: 2px solid #721c24; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1.2rem;
+    transition: all 0.3s ease; /* Transición suave */
+  }
+  
+  a:hover {
+    background-color: #721c24; /* Color de fondo al pasar el ratón */
+    color: #f8d7da; /* Texto blanco al pasar el ratón */
+    transform: scale(1.05); /* Efecto de escala */
+  }
+  

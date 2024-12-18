@@ -1,0 +1,20 @@
+  <div class="container">
+    <!-- Contenedor del título con imagen de fondo -->
+    <div class="title-container" style="background-image: url('https://img.freepik.com/fotos-premium/fondo-colorido-controladores-videojuegos-palabras-juego_662214-35244.jpg');">
+      <h1 class="title">GAME-SHOP</h1>
+      
+    </div>
+    
+    <!-- Lista de productos -->
+    <ul class="product-list">
+      <li *ngFor="let product of products" class="product-item">
+        <a [routerLink]="['/product', product.id]" class="product-link">
+          <img [src]="product.imageUrl" [alt]="product.name" class="product-image" />
+          <div class="product-details">
+            <h3 class="product-name">{{ product.name }}</h3>
+            <p class="product-price">{{ product.price }}</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>

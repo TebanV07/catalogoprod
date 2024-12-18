@@ -1,0 +1,10 @@
+<div class="cart-container">
+  <h3>🛒</h3>
+  <ul>
+    <li *ngFor="let item of cart">
+      {{ item.product.name }} x{{ item.quantity }} - ${{ item.product.price * item.quantity }}
+    </li>
+  </ul>
+  <p><strong>Total:</strong> ${{ total }}</p>
+</div>
+<router-outlet></router-outlet>
