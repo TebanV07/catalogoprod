@@ -3,11 +3,12 @@ import { CartService } from './cart.service';
 import { Product } from './product.service';
 import { RouterOutlet } from '@angular/router';
 import { NgFor } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
 
 @Component({
   selector: 'app-root',
-  imports:[RouterOutlet, NgFor],
+  imports:[RouterOutlet, NgFor, IonicModule,],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

@@ -6,11 +6,95 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <!-- Fuente Google opcional -->
+    <!-- Fuente Google -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Estilos generales */
+      ion-content {
+        --background: #f4f4f4; /* Fondo suave */
+        padding: 16px;
+        font-family: 'Roboto', sans-serif; /* Aplicar fuente Roboto */
+      }
+
+      /* Estilo para el header */
+      ion-header {
+        background-color: #6200ea; /* Color morado */
+      }
+
+      ion-toolbar {
+        --background: #6200ea; /* Color del toolbar */
+      }
+
+      ion-title {
+        color: white; /* Título blanco */
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      /* Estilo para los botones */
+      ion-button {
+        font-size: 1rem;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      /* Estilo para el contenedor del carrito */
+      .cart-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        padding: 16px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .cart-container h3 {
+        font-size: 2.5rem;
+        color: #6200ea; /* Ícono de carrito morado */
+        margin-bottom: 16px;
+      }
+
+      .cart-container ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 16px;
+      }
+
+      .cart-container li {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .cart-container li strong {
+        color: #6200ea; /* Resaltar nombres de productos */
+      }
+
+      .cart-container p {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #6200ea; /* Total en morado */
+      }
+
+      /* Estilos para router-outlet */
+      router-outlet {
+        margin-top: 20px;
+      }
+
+      /* Mensaje de error */
+      .error {
+        color: #f44336; /* Rojo de error */
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <app-root></app-root>

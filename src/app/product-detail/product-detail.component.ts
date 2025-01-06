@@ -3,10 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService, Product } from '../product.service';
 import { CartService } from '../cart.service';
 import { NgIf } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [NgIf],
+  imports: [NgIf, IonicModule],
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css'],
 })
