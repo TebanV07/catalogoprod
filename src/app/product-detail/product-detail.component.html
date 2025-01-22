@@ -1,6 +1,6 @@
-<ion-content class="ion-padding">
+
   <div *ngIf="product; else notFound" class="product-detail">
-    <ion-card>
+    <ion-card class="card">
       <ion-card-header>
         <ion-card-title class="text-center">Detalles del Producto</ion-card-title>
       </ion-card-header>
@@ -34,4 +34,3 @@
     <p class="error text-center">Producto no encontrado.</p>
     <ion-button color="medium" (click)="goBack()">Volver</ion-button>
   </ng-template>
-</ion-content>

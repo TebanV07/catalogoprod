@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService, Product } from '../product.service';
-import { CartService } from '../cart.service';
+import { ProductService, Product } from '../Services/product.service';
+import { CartService } from '../Services/cart.service';
 import { NgIf } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 

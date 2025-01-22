@@ -1,80 +1,53 @@
-/* Estilos generales */
-ion-content {
-  --background: #f9f9f9; /* Fondo suave para todo el contenido */
+.card {
+  animation: 2s gradient-angle infinite linear;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#584827, #2d230f),
+    conic-gradient(
+      from var(--gradient-angle),
+      #584827 0%,
+      #c7a03c 37%,
+      #f9de90 30%,
+      #c7a03c 33%,
+      #584827 40%,
+      #584827 50%,
+      #c7a03c 77%,
+      #f9de90 80%,
+      #c7a03c 83%,
+      #584827 90%
+    );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  border-radius: 12px;
+  margin: 10px auto;
+  padding: 15px;
 }
 
-/* Estilo para la tarjeta de detalles del producto */
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 1turn;
+  }
+}
+
 .product-detail {
   padding: 20px;
-}
-
-ion-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Título de la tarjeta */
-ion-card-title {
-  color: #6200ea; /* Título de color morado */
-  font-size: 1.6rem;
-  font-weight: bold;
-  text-transform: uppercase; /* Mayúsculas para darle más énfasis */
-}
-
-/* Estilo de la imagen del producto */
-.image-container {
-  text-align: center;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra en la imagen */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Detalles del producto */
-ion-col p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-ion-col strong {
-  color: #6200ea; /* Color morado para los labels */
-}
-
-/* Estilo para los botones */
-.product-buttons ion-button {
-  margin: 10px 5px;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-ion-button[color="primary"] {
-  --background: #6200ea; /* Morado para el botón 'Comprar' */
-  --color: white;
-}
-
-ion-button[color="danger"] {
-  --background: #f44336; /* Rojo para el botón 'Quitar' */
-  --color: white;
-}
-
-ion-button[color="medium"] {
-  --background: #9e9e9e; /* Gris para el botón 'Volver' */
-  --color: white;
-}
-
-/* Mensaje de error */
-.error {
-  color: #f44336; /* Rojo de error */
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-/* Alineación de botones */
 .text-center {
   text-align: center;
+}
+
+.error {
+  color: #ff4500;
+  font-size: 1.2rem;
+  font-weight: bold;
 }

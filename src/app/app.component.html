@@ -1,10 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tiendita confi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Header Toolbar</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
+  <!-- Telón (Cortina) visible cuando `showCurtain` es true -->
+  <div class="curtain" *ngIf="showCurtain"></div>
+
+  <!-- Cart Container (Carrito de Compras) -->
   <div class="cart-container">
     <h3>🛒</h3>
     <ul>
@@ -14,6 +18,9 @@
     </ul>
     <p><strong>Total:</strong> ${{ total }}</p>
   </div>
-  <router-outlet></router-outlet>
-  
+
+  <!-- Resultados o componentes adicionales -->
+  <div class="results">
+    <router-outlet></router-outlet>
+  </div>
 </ion-content>

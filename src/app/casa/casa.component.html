@@ -1,0 +1,19 @@
+<div class="video-template">
+  <!-- Video de fondo -->
+  <div class="video-background">
+    <ng-content select="[video-background]"></ng-content>
+  </div>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Contenedor del título -->
+    <div class="title-container">
+      <ng-content select="[title]"></ng-content>
+    </div>
+
+    <!-- Contenido del grid -->
+    <div class="grid-container">
+      <ng-content select="[grid]"></ng-content>
+    </div>
+  </div>
+</div>

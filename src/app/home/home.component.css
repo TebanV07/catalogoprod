@@ -1,14 +1,81 @@
-/* Contenedor principal */
-.container {
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 1200px;
+
+/* Contenedor del video de fondo */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Asegura que esté detrás del contenido */
 }
 
-/* Título con imagen de fondo */
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0turn;
+  inherits: false;
+}
+
+.card {
+  animation: 2s gradient-angle infinite linear;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#584827, #2d230f),
+    conic-gradient(
+      from var(--gradient-angle),
+      #584827 0%,
+      #c7a03c 37%,
+      #f9de90 30%,
+      #c7a03c 33%,
+      #584827 40%,
+      #584827 50%,
+      #c7a03c 77%,
+      #f9de90 80%,
+      #c7a03c 83%,
+      #584827 90%
+    );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 1turn;
+  }
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté encima del video */
+  padding: 20px;
+ 
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  width: 100vw;
+  max-width: 100%;
+}
+
 .title-container {
   background-size: cover;
   background-position: center;
@@ -25,20 +92,43 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Lista de productos */
-ion-grid {
-  margin-top: 20px;
+.product-card {
+  animation: 2s gradient-angle infinite linear;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#584827, #2d230f),
+    conic-gradient(
+      from var(--gradient-angle),
+      #584827 0%,
+      #c7a03c 37%,
+      #f9de90 30%,
+      #c7a03c 33%,
+      #584827 40%,
+      #584827 50%,
+      #c7a03c 77%,
+      #f9de90 80%,
+      #c7a03c 83%,
+      #584827 90%
+    );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  border-radius: 12px;
+  margin: 10px auto;
+  padding: 15px;
 }
 
-.product-card {
-  text-align: center;
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 1turn;
+  }
+}
+
+.product-card ion-card {
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
 }
 
-.product-card:hover {
+.product-card ion-card:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
@@ -54,19 +144,12 @@ ion-card-title {
   color: #007bff;
 }
 
-ion-card-content {
-  color: #333;
-  font-size: 1.1rem;
-}
-
-/* Precio */
 .product-price {
-  color: #ff4500; /* Naranja llamativo */
+  color: #ff4500;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* Botones */
 ion-button {
   --border-radius: 8px;
   --background: #007bff;
@@ -75,4 +158,39 @@ ion-button {
   margin-top: 10px;
   font-size: 1rem;
   font-weight: bold;
+}
+body {
+  margin: 0;
+  overflow: hidden; /* Evita el scroll durante la animación */
+}
+
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #3b2f63, #111);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: curtain-open 1s forwards ease-in-out;
+}
+
+@keyframes curtain-open {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
