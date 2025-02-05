@@ -105,3 +105,28 @@
     opacity: 1;
   }
 }
+/* Estilo para los botones de cantidad */
+.quantity-btn {
+  background-color: #3880ff; /* Color de fondo azul */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 0 5px;
+}
+
+/* Efecto al pasar el cursor sobre los botones */
+.quantity-btn:hover {
+  background-color: #4c8dff; /* Color de fondo azul más oscuro */
+  transform: scale(1.1); /* Efecto de aumentar tamaño */
+}
+
+/* Estilo para los botones cuando están deshabilitados */
+.quantity-btn:disabled {
+  background-color: #d3d3d3; /* Color gris cuando está deshabilitado */
+  cursor: not-allowed;
+}
+

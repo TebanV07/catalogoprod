@@ -8,11 +8,14 @@ import { CurtainService } from './Services/curtain.service';  // Asegúrate de i
 
 @Component({
   selector: 'app-root',
-  imports:[RouterOutlet, NgFor, NgIf, IonicModule],
+  imports: [RouterOutlet, NgFor, NgIf, IonicModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   cart: { product: Product, quantity: number }[] = [];
   total: number = 0;
   showCurtain = true;
@@ -39,5 +42,28 @@ export class AppComponent implements OnInit {
       this.cart = cart;
       this.total = this.cartService.getTotal(); // Actualiza el total
     });
+  }
+
+  // Función para aumentar la cantidad de un item
+  increaseQuantity(item: { product: Product, quantity: number }) {
+    item.quantity++;
+    this.updateTotal();
+  }
+
+  // Función para disminuir la cantidad de un item
+  decreaseQuantity(item: { product: Product, quantity: number }) {
+    if (item.quantity > 1) {
+      item.quantity--;
+      this.updateTotal();
+    }
+  }
+
+  // Actualizar el total del carrito
+  updateTotal() {
+    this.total = this.cartService.getTotal();  // Recalcula el total con el servicio
+  }
+  clearCart() {
+    this.cartService.clearCart(); // Llama al servicio para vaciar el carrito
+    this.updateTotal(); // Actualiza el total después de vaciar
   }
 }

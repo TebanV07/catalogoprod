@@ -6,11 +6,13 @@ import { Product } from './product.service';
   providedIn: 'root',
 })
 export class CartService {
+
   private cart = new BehaviorSubject<{ product: Product; quantity: number }[]>(
     []
   );
   cart$ = this.cart.asObservable();
 
+  
   addToCart(product: Product): void {
     const currentCart = this.cart.getValue();
     const existingItem = currentCart.find((item) => item.product.id === product.id);
@@ -38,5 +40,8 @@ export class CartService {
     return this.cart
       .getValue()
       .reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+  }
+  clearCart() {
+    this.cart.next([]); // Vaciar el carrito
   }
 }
