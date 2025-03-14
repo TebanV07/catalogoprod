@@ -23,38 +23,12 @@
 }
 
 .cart-container {
-
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   margin: 0; /* Elimina márgenes */
   width: 100vw; /* Asegura que ocupe el ancho completo del viewport */
   max-width: 100%;
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
-}
-
-.cart-container h3 {
-  font-size: 1.4rem;
-  color: #80d314;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.cart-container ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.cart-container li {
-  margin: 5px 0;
-  font-weight: bold;
-  font-size: 1.4rem;
-  color: #e0e407;
-}
-
-.cart-container p {
-  font-weight: bold;
-  font-size: 1.4rem;
-  color: #007bff;
 }
 
 @keyframes gradientAnimation {
@@ -68,6 +42,7 @@
     background-position: 0% 50%;
   }
 }
+
 .curtain {
   position: fixed;
   top: 0;
@@ -91,42 +66,36 @@
   }
 }
 
-/* Opcional: animación de desvanecimiento del contenido */
-.container {
-  opacity: 0;
-  animation: fade-in 2s 3s forwards ease-in-out;
+/* Estilo para el toolbar */
+.toolbar-content {
+  display: flex; /* Asegura que los elementos se alineen en línea */
+  align-items: center; /* Alinea verticalmente el contenido */
+  height: 56px; /* Altura estándar de un toolbar en Ionic */
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* Estilo para los botones de cantidad */
-.quantity-btn {
-  background-color: #3880ff; /* Color de fondo azul */
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin: 0 5px;
+ion-title {
+  font-size: 1.8rem; /* Ajusta el tamaño del título si es necesario */
+  margin: 0; /* Elimina márgenes que puedan afectar la alineación */
+  padding: 0; /* Elimina padding por defecto */
+  flex-grow: 1; /* Permite que el título ocupe el espacio disponible */
+  text-align: center; /* Centra el texto dentro del título */
 }
 
-/* Efecto al pasar el cursor sobre los botones */
-.quantity-btn:hover {
-  background-color: #4c8dff; /* Color de fondo azul más oscuro */
-  transform: scale(1.1); /* Efecto de aumentar tamaño */
+.cart-button {
+  background: none;  /* Sin fondo */
+  border: none;      /* Sin borde */
+  padding: 0;        /* Sin padding */
+  cursor: pointer;   /* Manito al pasar el cursor */
+  font-size: 2rem;   /* Tamaño del icono ajustado */
+  color: #333;       /* Color del icono */
+  margin-right: 10px; /* Espacio entre el icono del carrito y el título */
+  vertical-align: middle; /* Alinea verticalmente el icono con el texto */
+  position: relative; /* Permite el desplazamiento en relación al contenedor */
+  top: 15px;           /* Mueve el botón más abajo (ajustable) */
+  left: 5px;           /* Mueve el botón un poco hacia la derecha (ajustable) */
 }
 
-/* Estilo para los botones cuando están deshabilitados */
-.quantity-btn:disabled {
-  background-color: #d3d3d3; /* Color gris cuando está deshabilitado */
-  cursor: not-allowed;
+.cart-button span.material-icons {
+  font-size: 2rem; /* Tamaño del icono ajustado */
+  line-height: 0;  /* Elimina espacio extra alrededor del icono */
 }
-

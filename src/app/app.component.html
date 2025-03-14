@@ -1,32 +1,15 @@
 <ion-content>
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar class="toolbar-content">
+      <button routerLink="/cart" class="cart-button">
+        <span class="material-icons">shopping_cart</span>
+      </button>
       <ion-title>Tiendita confi</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <!-- Telón (Cortina) visible cuando `showCurtain` es true -->
   <div class="curtain" *ngIf="showCurtain"></div>
-
-  <!-- Cart Container (Carrito de Compras) -->
-  <div class="cart-container">
-    <h3>🛒</h3>
-    <ul>
-      <li *ngFor="let item of cart">
-        <div>
-          {{ item.product.name }} x
-          
-          <span>{{ item.quantity }}</span>
-   
-          - ${{ item.product.price * item.quantity }}
-          <button class="quantity-btn" (click)="decreaseQuantity(item)">-</button>
-          <button class="quantity-btn" (click)="increaseQuantity(item)">+</button>
-        </div>
-      </li>
-    </ul>
-    <p><strong>Total:</strong> ${{ total }}</p>
-    <button class="clear-cart-btn" (click)="clearCart()">Vaciar carrito</button>
-  </div>
 
   <!-- Resultados o componentes adicionales -->
   <div class="results">

@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from './Services/cart.service';
-import { Product } from './Services/product.service';
 import { RouterOutlet } from '@angular/router';
-import { NgFor, NgIf } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { CurtainService } from './Services/curtain.service';  // Asegúrate de importar el servicio CurtainService
+import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgFor, NgIf, IonicModule],
+  imports: [RouterOutlet, IonicModule, NgIf, RouterLink],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
@@ -16,12 +15,12 @@ export class AppComponent implements OnInit {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
-  cart: { product: Product, quantity: number }[] = [];
-  total: number = 0;
+
+
   showCurtain = true;
 
   constructor(
-    private cartService: CartService,
+
     private curtainService: CurtainService  // Inyectamos CurtainService en el constructor
   ) {}
 
@@ -37,33 +36,5 @@ export class AppComponent implements OnInit {
       }, 3000);
     }
 
-    // Manejar actualizaciones del carrito
-    this.cartService.cart$.subscribe((cart: { product: Product, quantity: number }[]) => {
-      this.cart = cart;
-      this.total = this.cartService.getTotal(); // Actualiza el total
-    });
-  }
-
-  // Función para aumentar la cantidad de un item
-  increaseQuantity(item: { product: Product, quantity: number }) {
-    item.quantity++;
-    this.updateTotal();
-  }
-
-  // Función para disminuir la cantidad de un item
-  decreaseQuantity(item: { product: Product, quantity: number }) {
-    if (item.quantity > 1) {
-      item.quantity--;
-      this.updateTotal();
-    }
-  }
-
-  // Actualizar el total del carrito
-  updateTotal() {
-    this.total = this.cartService.getTotal();  // Recalcula el total con el servicio
-  }
-  clearCart() {
-    this.cartService.clearCart(); // Llama al servicio para vaciar el carrito
-    this.updateTotal(); // Actualiza el total después de vaciar
   }
 }
