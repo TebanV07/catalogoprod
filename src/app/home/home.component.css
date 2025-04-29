@@ -18,17 +18,14 @@
   object-fit: cover;
   z-index: -1;
 }
-
-/* Cuerpo */
 html, body {
-  font-family: "Roboto", sans-serif;
-  line-height: 1.6;
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
-  overflow-y: auto; /* Scroll permitido */
+  overflow-y: auto; 
 }
-
-/* Contenedor principal */
 .container {
   position: relative;
   z-index: 1;
@@ -38,7 +35,7 @@ html, body {
   margin: 0;
   width: 100%;
   max-width: 100%;
-  min-height: 100vh; /* Importante */
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -55,7 +52,7 @@ html, body {
 }
 .title {
   font-size: 2.5rem;
-  color: #fff;
+  color: none;
   text-transform: uppercase;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

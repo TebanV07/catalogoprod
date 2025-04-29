@@ -3,6 +3,7 @@
 /* Asegurar que el contenido es scrollable en dispositivos móviles */
 ion-content {
   --overflow: auto;
+  --background: transparent !important;
 }
 
 /* Video de fondo - asegurar que cubre toda la pantalla y se adapta */
@@ -269,4 +270,11 @@ ion-header {
   ion-content {
     --padding-bottom: var(--ion-safe-area-bottom, 0);
   }
+}
+html, body, ion-app, ion-content {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
 }
