@@ -1,50 +1,272 @@
-/* Estilos globales */
-body {
+/* Estilos globales para hacer la aplicación responsive */
+
+/* Asegurar que el contenido es scrollable en dispositivos móviles */
+ion-content {
+  --overflow: auto;
+}
+
+/* Video de fondo - asegurar que cubre toda la pantalla y se adapta */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  
+  video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  padding: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  height: 100%;
+  -webkit-overflow-scrolling: touch; /* Para mejor scroll en iOS */
+}
+
+/* Título de la tienda */
+.title-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* Tarjetas de productos */
+.product-card {
+  margin-bottom: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  .product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    
+    @media (max-width: 576px) {
+      height: 150px;
+    }
   }
   
-  /* Enlaces */
-  a {
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s ease;
+  ion-card-content {
+    flex-grow: 1;
   }
   
-  a:hover {
-    color: #0056b3;
+  .product-price {
+    font-weight: bold;
+    margin-top: 8px;
   }
   
-  /* Botones globales */
-  button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: transform 0.3s, background-color 0.3s;
+  ion-button {
+    margin: 10px;
+  }
+}
+
+/* Página de detalles del producto */
+.product-detail {
+  padding: 16px;
+  
+  .card {
+    margin: 0;
   }
   
-  button:hover {
-    transform: scale(1.05);
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+    @media (max-width: 768px) {
+      margin-bottom: 16px;
+    }
   }
   
-  /* Clases comunes */
+  .product-image {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+  }
+  
+  .product-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 16px 0;
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+      
+      ion-button {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  
   .text-center {
     text-align: center;
   }
+}
+
+/* Página del carrito */
+.cart-container {
+  padding: 16px;
+  max-width: 100%;
   
-  .container {
-    max-width: 1200px;
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .cart-item-info {
+      flex: 1;
+      
+      .product-name {
+        font-weight: bold;
+      }
+    }
+    
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      
+      @media (max-width: 576px) {
+        margin-top: 8px;
+        align-self: flex-end;
+      }
+      
+      .quantity-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+      }
+    }
+  }
+  
+  .total {
+    text-align: right;
+    margin: 20px 0;
+    font-size: 1.2rem;
+  }
+  
+  .clear-cart-btn, .go-home-btn {
+    display: block;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
   }
   
-  .error {
-    color: #dc3545;
-    font-weight: bold;
+  .go-home-btn {
+    margin-bottom: 20px;
+  }
+}
+
+/* Header y barra de navegación */
+ion-header {
+  ion-toolbar {
+    --background: #f8f8f8;
+    
+    .toolbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    
+    ion-title {
+      font-size: 1.2rem;
+      
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
+    }
+    
+    .cart-button {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--ion-color-primary);
+      padding: 8px;
+      
+      .material-icons {
+        font-size: inherit;
+      }
+    }
+  }
+}
+
+/* Cortina (overlay) */
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+/* Ajustes para notch y pantallas con formas irregulares */
+@supports (padding-top: env(safe-area-inset-top)) {
+  ion-header {
+    padding-top: var(--ion-safe-area-top, 0);
   }
   
+  ion-content {
+    --padding-bottom: var(--ion-safe-area-bottom, 0);
+  }
+}
