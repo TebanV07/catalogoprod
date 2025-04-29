@@ -1,21 +1,19 @@
 <!-- Video de fondo -->
 <div class="video-background">
   <video autoplay muted loop>
-    <source src="/fondo.mp4" type="video/mp4" />
+    <source src="assets/fondo.mp4" type="video/mp4" />
   </video>
 </div>
 
 <!-- Contenedor principal -->
 <div class="container">
   <!-- Sección del título -->
-  <ng-container *ngIf="true">
-    <div
-      class="title-container"
-      style="background-image: url('https://img.freepik.com/fotos-premium/fondo-colorido-controladores-videojuegos-palabras-juego_662214-35244.jpg');"
-    >
-      <h1 class="title">GAME-SHOP</h1>
-    </div>
-  </ng-container>
+  <div
+    class="title-container"
+    style="background-image: url('https://img.freepik.com/fotos-premium/fondo-colorido-controladores-videojuegos-palabras-juego_662214-35244.jpg');"
+  >
+    <h1 class="title">GAME-SHOP</h1>
+  </div>
 
   <!-- Grid de productos -->
   <ng-container *ngIf="products && products.length > 0">
@@ -35,7 +33,7 @@
             <ion-card-content>
               <p class="product-price">Precio: {{ product.price }}</p>
             </ion-card-content>
-            <ion-button expand="block" [routerLink]="['/product', product.id]">
+            <ion-button expand="block" [routerLink]="['/product', product.id]" routerDirection="forward">
               Ver Detalles
             </ion-button>
           </ion-card>

@@ -1,53 +1,100 @@
+:host {
+  --card-background: linear-gradient(135deg, #2d230f 0%, #584827 100%);
+  --card-border: 2px solid #c7a03c;
+  --text-primary: #ffffff;
+  --text-secondary: #f9de90;
+}
+
+/* Fondo general */
+ion-content {
+  --background: #1a1a1a;
+}
+
+/* Tarjeta principal */
 .card {
-  animation: 2s gradient-angle infinite linear;
-  border: 2px solid transparent;
-  background-image: linear-gradient(#584827, #2d230f),
-    conic-gradient(
-      from var(--gradient-angle),
-      #584827 0%,
-      #c7a03c 37%,
-      #f9de90 30%,
-      #c7a03c 33%,
-      #584827 40%,
-      #584827 50%,
-      #c7a03c 77%,
-      #f9de90 80%,
-      #c7a03c 83%,
-      #584827 90%
-    );
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  border-radius: 12px;
-  margin: 10px auto;
-  padding: 15px;
-}
-
-@keyframes gradient-angle {
-  to {
-    --gradient-angle: 1turn;
-  }
-}
-
-.product-detail {
-  padding: 20px;
-  background-color: #1e1e1e;
+  background: var(--card-background);
+  border: var(--card-border);
   border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+  margin: 20px auto;
+  max-width: 900px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen del producto */
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-image {
   width: 100%;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid #c7a03c;
 }
 
+/* Títulos y textos */
 .text-center {
   text-align: center;
 }
 
-.error {
-  color: #ff4500;
-  font-size: 1.2rem;
+ion-card-title {
+  font-size: 1.8rem;
   font-weight: bold;
+  color: var(--text-secondary);
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #e0e0e0;
+}
+
+strong {
+  color: var(--text-secondary);
+}
+
+/* Botones */
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.product-buttons ion-button,
+.text-center ion-button {
+  width: 150px;
+}
+
+/* Sección de producto no encontrado */
+.error {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .product-image {
+    height: 400px;
+  }
+
+  ion-card-title {
+    font-size: 2.2rem;
+  }
+
+  .product-buttons ion-button {
+    width: 200px;
+  }
 }
